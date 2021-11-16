@@ -35,7 +35,7 @@ public class TestService {
 
     public Test update(Test test){
         testMapper.updateById(test);
-        return test;
+        return testMapper.selectById(test.getId());
     }
 
     public String delete(String id){

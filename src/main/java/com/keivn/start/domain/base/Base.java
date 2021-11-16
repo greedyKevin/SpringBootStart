@@ -21,10 +21,16 @@ public class Base {
     @TableId(type = IdType.ASSIGN_ID)
     private String id;
 
-    @TableField(fill = FieldFill.INSERT,update = "now()")
+    /**
+     * 创建时间
+     */
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
-    @TableField(fill = FieldFill.INSERT_UPDATE,update = "now()")
+    /**
+     * 修改时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date modifyTime;
 
 }

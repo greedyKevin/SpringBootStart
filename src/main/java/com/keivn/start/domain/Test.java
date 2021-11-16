@@ -1,7 +1,11 @@
 package com.keivn.start.domain;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.keivn.start.domain.base.Base;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * todo
