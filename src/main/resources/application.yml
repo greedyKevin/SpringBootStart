@@ -9,10 +9,25 @@ spring:
       on-profile: dev
 
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://39.108.226.227:3306/dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Shanghai
-    driver-class-name: com.mysql.jdbc.Driver
+    username: agcim
+    password: agcim123
+    url: jdbc:postgresql://192.168.4.35:5432/test_file
+    driver-class-name: org.postgresql.Driver
 
 server:
   port: 8085
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_deleted
+      logic-delete-value: true
+      logic-not-delete-value: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+minio:
+  accessKey: "admin"
+  secretKey: "12345678"
+  url: "http://127.0.0.1:9000/"

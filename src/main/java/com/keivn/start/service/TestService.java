@@ -1,9 +1,11 @@
 package com.keivn.start.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.keivn.start.domain.Test;
+import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.keivn.start.entity.Test;
 import com.keivn.start.mapper.TestMapper;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,8 +36,10 @@ public class TestService {
     }
 
     public Test update(Test test){
-        testMapper.updateById(test);
-        return testMapper.selectById(test.getId());
+        Test result = testMapper.selectById(test.getId());
+        BeanUtils.copyProperties(result,test);
+        testMapper.updateById(result);
+        return result;
     }
 
     public String delete(String id){

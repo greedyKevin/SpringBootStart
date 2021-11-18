@@ -1,6 +1,6 @@
 package com.keivn.start.controller;
 
-import com.keivn.start.domain.Test;
+import com.keivn.start.entity.Test;
 import com.keivn.start.result.ResultResponse;
 import com.keivn.start.service.TestService;
 import lombok.AllArgsConstructor;
@@ -14,12 +14,15 @@ import java.util.List;
  * @author huang jiahui
  * @date 2021/11/11 11:45
  */
-
 @RestController
 @RequestMapping("/test")
 @AllArgsConstructor
 public class TestController {
 
+
+    /**
+     * test service
+     */
     private final TestService testService;
 
     /**
@@ -29,8 +32,10 @@ public class TestController {
      */
     @GetMapping("/get/{id}")
     public ResultResponse get(@PathVariable String id){
-         Test result = testService.get(id);
-         return ResultResponse.success(result);
+        // 根据id获取结果
+        Test result = testService.get(id);
+        // 返回结果
+        return ResultResponse.success(result);
     }
 
     /**
@@ -72,8 +77,8 @@ public class TestController {
      * @param id
      * @return {@link ResultResponse}
      */
-    @DeleteMapping("/delete")
-    public ResultResponse delete(String id){
+    @DeleteMapping("/delete/{id}")
+    public ResultResponse delete(@PathVariable String id){
         String result = testService.delete(id);
         return ResultResponse.success(result);
     }

@@ -1,7 +1,7 @@
 package com.keivn.start.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.keivn.start.domain.Test;
+import com.keivn.start.entity.Test;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

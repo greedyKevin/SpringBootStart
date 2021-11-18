@@ -36,11 +36,11 @@ public class ResultResponse<T> implements Serializable {
         this.data = data;
     }
 
-    public static<T> ResultResponse success(T data){
+    public static<T> ResultResponse<T> success(T data){
         return new ResultResponse<>(SUCCESS_CODE,"success",data);
     }
 
-    public static<T> ResultResponse fail(T data){
+    public static<T> ResultResponse<T> fail(T data){
         return new ResultResponse<>(FAIL_CODE,"fail",data);
     }
 
