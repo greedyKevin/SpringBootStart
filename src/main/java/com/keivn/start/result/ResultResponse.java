@@ -40,8 +40,13 @@ public class ResultResponse<T> implements Serializable {
         return new ResultResponse<>(SUCCESS_CODE,"success",data);
     }
 
-    public static<T> ResultResponse<T> fail(T data){
-        return new ResultResponse<>(FAIL_CODE,"fail",data);
+    public static<T> ResultResponse<T> fail(String msg,T data){
+        return new ResultResponse<>(FAIL_CODE,msg,data);
     }
+
+    public static<T> ResultResponse<T> error(Throwable t){
+        return new ResultResponse<>(FAIL_CODE,t.getMessage(),null);
+    }
+
 
 }

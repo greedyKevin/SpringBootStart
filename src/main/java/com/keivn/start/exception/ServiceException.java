@@ -1,12 +1,20 @@
 package com.keivn.start.exception;
 
+import lombok.NoArgsConstructor;
+
 /**
- *
+ * 自定义service层 Exception
  * @author huang jiahui
- * @date 2021/11/18 14:26
+ * @date 2021/11/20 11:21
  */
-public class ServiceException extends RuntimeException {
-    public ServiceException(String msg,Throwable cause) {
-        super(msg, cause);
+@NoArgsConstructor
+public class ServiceException extends RuntimeException{
+
+    public ServiceException(String message , Throwable cause) {
+        super(message, cause);
+    }
+
+    public ServiceException(String message){
+        super(message);
     }
 }

@@ -30,9 +30,15 @@ public class Base {
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
+    /**
+     * 乐观锁
+     */
     @Version
     private Integer lockVersion;
 
+    /**
+     * 逻辑删除
+     */
     @TableLogic
     private Boolean isDeleted;
 }
