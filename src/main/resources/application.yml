@@ -11,8 +11,12 @@ spring:
   datasource:
     username: agcim
     password: agcim123
-    url: jdbc:postgresql://192.168.4.35:5432/test_file
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://39.108.226.227:3306/dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+
+  redis:
+    host: 39.108.226.227
+    port: 6379
 
 server:
   port: 10000
@@ -27,7 +31,3 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
-minio:
-  accessKey: "admin"
-  secretKey: "12345678"
-  url: "http://127.0.0.1:9000/"
