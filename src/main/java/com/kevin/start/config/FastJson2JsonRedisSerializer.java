@@ -1,4 +1,4 @@
-package com.augurit.service.config.serializer;
+package com.kevin.start.config;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;
@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * fastjson序列化
+ * redis 使用fastjson序列化
  * @author huang jiahui
  * @date 2021/11/19
  */

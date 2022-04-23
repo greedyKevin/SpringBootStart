@@ -1,7 +1,7 @@
 package com.kevin.start;
 
 
-import com.kevin.start.utils.redis.RedisUtil;
+import com.kevin.start.util.RedisUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +17,7 @@ class StartApplicationTests {
     private RedisTemplate<String, Object> template;
 
     @Resource
-    private RedisUtil redisUtil;
+    private RedisUtils redisUtils;
 
 
     @Test

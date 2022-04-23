@@ -1,6 +1,5 @@
 package com.kevin.start.config;
 
-import com.kevin.start.serializer.FastJson2JsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

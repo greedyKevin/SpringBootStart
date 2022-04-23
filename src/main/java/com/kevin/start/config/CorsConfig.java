@@ -1,4 +1,4 @@
-package com.augurit.service.config;
+package com.kevin.start.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.augurit.service.utils.jwt;
+package com.kevin.start.util;
 
 
 import com.augurit.service.entity.User;

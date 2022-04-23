@@ -1,4 +1,4 @@
-package com.kevin.start.handler;
+package com.kevin.start.config;
 
 import com.kevin.start.result.ResultResponse;
 

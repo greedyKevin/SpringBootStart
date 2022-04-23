@@ -1,4 +1,4 @@
-package com.augurit.service.config.interceptor;
+package com.kevin.start.config;
 
 import com.augurit.service.config.exception.NoAuthException;
 import com.augurit.service.constant.Constant;
@@ -6,9 +6,8 @@ import com.augurit.service.constant.RedisKeyConstant;
 import com.augurit.service.constant.UrlConstant;
 import com.augurit.service.entity.User;
 import com.augurit.service.service.AuthPathService;
-import com.augurit.service.utils.jwt.JwtUtils;
+import com.kevin.start.util.JwtUtils;
 import com.augurit.service.utils.redis.RedisUtils;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,8 +19,7 @@ import java.net.URLDecoder;
 import java.util.List;
 
 /**
- * 拦截器
- *
+ *  登录拦截器
  * @author huang jiahui
  * @date 2021/11/20 13:43
  */
@@ -36,7 +34,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     private AuthPathService authPathService;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 接口地址
         String uri = request.getRequestURI();
 
@@ -72,7 +70,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         key = RedisKeyConstant.USER.concat(key);
 
-        User result = (User) redisUtils.get(key);
+        com.augurit.service.entity.User result = (User) redisUtils.get(key);
 
         if (null == result) {
             throw new NoAuthException("登录过期");
